@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'; //allows us to use a class based component
 import { Link } from 'react-router-dom';
 import albumData from './../data/albums';
 
@@ -6,11 +6,12 @@ class Library extends Component {
   constructor(props) {
     super(props);
     this.state = { albums: albumData };
+    //A component's state is data on the component that's designed to be dynamic
+    // and changeable throughout the lifetime of the component.
   }
   render() {
     return(
       <section className='library'>
-        Library will go here
         {
           this.state.albums.map( (album, index) =>
             <Link to={'/album/${album.slug}'} key={index}>
