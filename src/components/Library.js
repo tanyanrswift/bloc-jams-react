@@ -6,15 +6,15 @@ class Library extends Component {
   constructor(props) {
     super(props);
     this.state = { albums: albumData };
-    //A component's state is data on the component that's designed to be dynamic
-    // and changeable throughout the lifetime of the component.
+    //State is a object/property. Albums is the property here, albumData is assigned to the property
+    //we will use albums as a property to return elements
   }
   render() {
     return(
       <section className='library'>
         {
           this.state.albums.map( (album, index) =>
-            <Link to={'/album/${album.slug}'} key={index}>
+            <Link to={`/album/${album.slug}`} key={index}>
               <img src={album.albumCover} alt={album.title} />
               <div>{album.title}</div>
               <div>{album.artist}</div>

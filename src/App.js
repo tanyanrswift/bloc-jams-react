@@ -19,8 +19,6 @@ class App extends Component {
         </header>
         <main>
           <Route exact path="/" component={Landing} />
-          //for a route component to work, it needs 2 properties to be defined, path and components
-          //when it matches a path in the address bar with the value of the path prop, it renders the component prop
           <Route path="/library" component={Library} />
           <Route path="/album/:slug" component={Album} />
         </main>
