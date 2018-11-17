@@ -12,7 +12,8 @@ class Album extends Component {
     this.state = {
       album: album,
       currentSong: album.songs[0],
-      isPlaying: false
+      isPlaying: false,
+      hoveredSong: null
     };
 
     this.audioElement = document.createElement('audio');
@@ -30,7 +31,7 @@ class Album extends Component {
   }
 
   setSong(song) {
-    this.audioElment.src = song.audioSrc;
+    this.audioElement.src = song.audioSrc;
     this.setState({ currentSong: song });
   }
 
@@ -42,6 +43,14 @@ class Album extends Component {
       if (!isSameSong) {this.setSong(song); }
       this.play();
     }
+  }
+
+  handleMouseEnter(song) {
+    this.setState({hoveredSong: song})
+  }
+
+  handleMouseLeave(song) {
+    this.setState({hoveredSong: null})
   }
 
   render() {
@@ -64,7 +73,7 @@ class Album extends Component {
           <tbody>
             {
             this.state.album.songs.map( (song, index) =>
-              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} >
+              <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter={() => this.handleMouseEnter(song)} onMouseLeave={() =>this.handleMouseLeave(song)} >
                 <div>{index+1}</div>
                 <div>{song.title}</div>
                 <div>{song.duration}</div>
