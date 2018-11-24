@@ -1,13 +1,18 @@
-album {
-  font: white;
+.artist {
+  color: white;
   text-transform: uppercase;
 }
 
-#album-cover-art {
-  height: 200px;
-  width: 200px;
+#song-number, #song-duration {
+  color: blue;
+  padding-right: 20px;
 }
 
-#song-list {
-  text-align: center;
+#song-title {
+  color: white;
+  padding-right: 20px;
+}
+
+.player-bar {
+  color: blue;
 }

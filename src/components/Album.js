@@ -166,14 +166,15 @@ class Album extends Component {
             {
             this.state.album.songs.map( (song, index) =>
               <tr className="song" key={index} onClick={() => this.handleSongClick(song)} onMouseEnter = {() => this.handleMouseEnter(song, index + 1)} onMouseLeave = {() => this.handleMouseLeave(song, index + 1)} >
-                <td>{this.getSongNumber(index + 1)}</td>
-                 <td>{song.title}</td>
-                 <td>{song.duration}</td>
+                <td id="song-number">{this.getSongNumber(index + 1)}</td>
+                 <td id="song-title">{song.title}</td>
+                 <td id="song-duration">{this.formatTime(song.duration)}</td>
               </tr>
             )
           }
           </tbody>
         </table>
+        <div className='player-bar'>
         <PlayerBar
           isPlaying={this.state.isPlaying}
           currentSong={this.state.currentSong}
@@ -187,6 +188,7 @@ class Album extends Component {
           handleVolumeChange={(e) =>this.handleVolumeChange(e)}
           formatTime={this.formatTime}
         />
+        </div>
       </section>
     );
   }

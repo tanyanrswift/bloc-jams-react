@@ -1,3 +1,10 @@
 .library {
   color: white;
+  text-transform: uppercase;
+}
+
+.image {
+  height: 300px;
+  width: 300px;
+  border-style: solid;
 }
