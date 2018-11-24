@@ -1,0 +1,15 @@
+.player-bar {
+  color: white;
+}
+
+#buttons {
+  float: right;
+}
+
+#time-control {
+  float: right;
+}
+
+#volume-control {
+  float: left;
+}

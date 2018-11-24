@@ -1,0 +1,13 @@
+album {
+  font: white;
+  text-transform: uppercase;
+}
+
+#album-cover-art {
+  height: 200px;
+  width: 200px;
+}
+
+#song-list {
+  text-align: center;
+}

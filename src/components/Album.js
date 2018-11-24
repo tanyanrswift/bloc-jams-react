@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './album.css';
 import albumData from './../data/albums';
 import PlayerBar from './PlayerBar';
 
@@ -135,17 +136,20 @@ class Album extends Component {
   }
 
   formatTime(seconds) {
-    const timeSeconds = this.state.currentTime.seconds;
-    const minutes = timeSeconds / 60;
-    const second = timeSeconds % 60;
-    return ("minutes" + ":" + "second");
+    const minutes = Math.round(seconds / 60);
+    const second = Math.round(seconds % 60);
+    if (second < 10) {
+      return (minutes + ":0" + second);
+    } else {
+      return (minutes + ":" + second);
+    }
   }
 
   render() {
     return(
       <section className="album">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title}/>
+          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
             <h2 className="artist">{this.state.album.artist}</h2>
@@ -181,6 +185,7 @@ class Album extends Component {
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
           handleVolumeChange={(e) =>this.handleVolumeChange(e)}
+          formatTime={this.formatTime}
         />
       </section>
     );
