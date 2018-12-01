@@ -1,6 +1,9 @@
 .library {
   color: white;
   text-transform: uppercase;
+}
+
+.link {
   text-decoration: none;
 }
 
@@ -8,4 +11,11 @@
   height: 300px;
   width: 300px;
   border-style: solid;
+  float: left;
+  padding: 20px;
+}
+
+.album {
+  float: inherit;
+  padding: 20px;
 }
