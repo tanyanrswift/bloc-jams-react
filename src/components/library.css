@@ -5,6 +5,7 @@
 
 .link {
   text-decoration: none;
+  color: white;
 }
 
 .image {
@@ -13,9 +14,27 @@
   border-style: solid;
   float: left;
   padding: 20px;
+  box-shadow: 0 4px 8px 0 blue;
+  transition: 0.3s;
+}
+
+.image:hover {
+  box-shadow: 0 8px 16px 0 blue;
 }
 
 .album {
-  float: inherit;
-  padding: 20px;
+  padding: 2px 16px;
+}
+
+#title {
+  text-align: left;
+
+}
+
+#artist {
+  text-align: left;
+}
+
+#songs {
+  text-align: left;
 }
