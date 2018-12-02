@@ -20,10 +20,10 @@ export default [{
     slug: 'guglielmo-marconi-the-telephone',
     albumCover: '/assets/images/album_covers/02.jpg',
     songs: [
-        { title: 'Hello, Operator?', duration: '1:01' },
-        { title: 'Ring, ring, ring', duration: '5:01' },
-        { title: 'Fits in your pocket', duration: '3:21' },
-        { title: 'Can you hear me now?', duration: '3:14' },
-        { title: 'Wrong phone number', duration: '2:15' }
+        { title: 'Hello, Operator?', duration: '161.71', audioSrc:'/assets/music/blue.mp3' },
+        { title: 'Ring, ring, ring', duration: '103.96', audioSrc: '/assets/music/green.mp3' },
+        { title: 'Fits in your pocket', duration: '268.45', audioSrc: '/assets/music/red.mp3' },
+        { title: 'Can you hear me now?', duration: '153.14', audioSrc: '/assets/music/pink.mp3' },
+        { title: 'Wrong phone number', duration: '374.22', audioSrc: '/assets/music/magenta.mp3' }
     ]
 }];

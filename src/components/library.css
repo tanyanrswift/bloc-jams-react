@@ -1,18 +1,20 @@
-.library {
+.library-page {
   color: white;
   text-transform: uppercase;
+  display: flex;
 }
 
 .link {
   text-decoration: none;
   color: white;
+  padding-left: 170px;
+  padding-right: 100px;
 }
 
 .image {
-  height: 300px;
-  width: 300px;
+  height: 280px;
+  width: 280px;
   border-style: solid;
-  float: left;
   padding: 20px;
   box-shadow: 0 4px 8px 0 blue;
   transition: 0.3s;
@@ -22,19 +24,6 @@
   box-shadow: 0 8px 16px 0 blue;
 }
 
-.album {
-  padding: 2px 16px;
-}
-
-#title {
-  text-align: left;
-
-}
-
-#artist {
-  text-align: left;
-}
-
-#songs {
-  text-align: left;
+.album-in-detail {
+  padding: 16px 16px;
 }
