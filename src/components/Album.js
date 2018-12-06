@@ -75,10 +75,9 @@ class Album extends Component {
     }
   }
 
-  handleMouseEnter(song, index) {
+  handleMouseEnter(song) {
     this.setState({
-      hoveredSong: song,
-      index
+      hoveredSong: song
     });
   }
 
@@ -90,24 +89,12 @@ class Album extends Component {
     }
   }
 
-  //functionDisplayIcon(index) {
-    //if (this.state.isPlaying === index) {
-      //return (
-        //<span className = "icon ion-md-pause"></span>
-      //);
-    //} else {
-      //return (
-        //<span className = "icon ion-md-play"></span>
-      //)
-    //}
-  //}
-
   songIndexIcon(song, index) {
-    if (this.state.index === song && this.state.isPlaying === true) {
+    if (this.state.currentSong === song && this.state.isPlaying === true) {
       return (
         <span className = "icon ion-md-pause"></span>
       );
-    } else if (this.state.hoveredSong === index) {
+    } else if (this.state.hoveredSong === song) {
       return (
         <span className = "icon ion-md-play"></span>
         )
@@ -175,7 +162,7 @@ class Album extends Component {
             {
             this.state.album.songs.map( (song, index) =>
               <tr className="song" key={index} onClick={() => this.handleSongClick(song, index)} onMouseEnter = {() => this.handleMouseEnter(song, index)} onMouseLeave = {() => this.handleMouseLeave(index)} >
-                <td id="song-number">{this.songIndexIcon(index)}</td>
+                <td id="song-number">{this.songIndexIcon(song, index)}</td>
                  <td id="song-title">{song.title}</td>
                  <td id="song-duration">{this.formatTime(song.duration)}</td>
               </tr>
